@@ -6,6 +6,12 @@
 <title>مضامین قرآنِ حکیم — موضوعاتی فہرست</title>
 <meta name="description" content="قرآنِ حکیم کے ۴۲۳ موضوعات، حروفِ تہجی کی ترتیب میں، آیات، حوالہ جات اور اردو ترجمہ کے ساتھ۔">
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0E5C45">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="مضامین قرآن">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='30,2 70,2 98,30 98,70 70,98 30,98 2,70 2,30' fill='%230E5C45' stroke='%23B8860B' stroke-width='5'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23D7A92A' font-family='Georgia,serif'%3Eم%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -56,5 +62,14 @@
 
   <script src="data.js"></script>
   <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/mazameen-quran/service-worker.js')
+          .then(function(reg){ console.log('SW registered'); })
+          .catch(function(err){ console.log('SW error:', err); });
+      });
+    }
+  </script>
 </body>
 </html>
