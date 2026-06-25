@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri+Quran&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+:root{
+  --bg: #F6EFDC;
+  --bg-card: #FBF7EC;
+  --bg-card-open: #FFFDF6;
+  --ink: #2B2014;
+  --ink-soft: #5A4A36;
+  --emerald: #0E5C45;
+  --emerald-dark: #093A2C;
+  --emerald-pale: #E3ECE5;
+  --gold: #B8860B;
+  --gold-bright: #D7A92A;
+  --gold-pale: #EFD98A;
+  --maroon: #7B2D26;
+  --border: #D8C79C;
+  --shadow: 0 6px 20px rgba(43,32,20,.10);
+  --radius: 10px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse at top, #FBF4E2 0%, var(--bg) 55%);
+  color:var(--ink);
+  font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic', serif;
+  line-height:2.1;
+  direction:rtl;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+}
+
+/* ---------- ornamental strips ---------- */
+.ornament-strip{
+  height:13px;
+  background-image:
+    repeating-linear-gradient(45deg, var(--gold) 0 2px, transparent 2px 11px),
+    repeating-linear-gradient(-45deg, var(--gold) 0 2px, transparent 2px 11px);
+  opacity:.55;
+}
+.ornament-strip.thick{height:18px;}
+
+/* ---------- header ---------- */
+.site-header{
+  background: linear-gradient(180deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+  color:#F4ECD3;
+  text-align:center;
+  padding:38px 18px 30px;
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: radial-gradient(rgba(244,236,211,.06) 1px, transparent 1px);
+  background-size:16px 16px;
+  pointer-events:none;
+}
+.header-inner{ position:relative; max-width:880px; margin:0 auto; }
+.kicker{
+  font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic', serif;
+  letter-spacing:.04em;
+  color: var(--gold-pale);
+  font-size:1rem;
+  margin:0 0 6px;
+}
+.site-title{
+  font-family:'Aref Ruqaa', serif;
+  font-weight:700;
+  font-size:clamp(2.4rem, 6vw, 3.6rem);
+  margin:0 0 10px;
+  color:#FBF7EC;
+  text-shadow: 0 2px 0 rgba(0,0,0,.18);
+}
+.site-sub{
+  margin:0 0 22px;
+  color:#D9CDA6;
+  font-size:1.05rem;
+}
+.stats-row{
+  display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap;
+}
+.stat{ display:flex; flex-direction:column; align-items:center; min-width:64px; }
+.stat-num{ font-size:1.5rem; font-weight:700; color:var(--gold-bright); }
+.stat-label{ font-size:.82rem; color:#CBBE96; }
+.stat-divider{ color: var(--gold); opacity:.6; font-size:1.1rem; }
+
+/* ---------- search ---------- */
+.search-bar-wrap{
+  max-width:680px; margin:-22px auto 0; padding:0 18px; position:relative; z-index:3;
+}
+.search-bar{
+  display:flex; align-items:center; gap:10px;
+  background:var(--bg-card-open);
+  border:2px solid var(--gold);
+  border-radius:999px;
+  padding:12px 20px;
+  box-shadow: var(--shadow);
+}
+.search-bar svg{ flex:0 0 auto; color:var(--emerald); opacity:.8; }
+.search-bar input{
+  flex:1; border:none; outline:none; background:transparent;
+  font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic', serif;
+  font-size:1.15rem; color:var(--ink);
+  direction:rtl;
+}
+.search-bar input::placeholder{ color:#9C8A68; }
+.clear-btn{
+  border:none; background:var(--emerald-pale); color:var(--emerald-dark);
+  width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:.9rem;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .15s;
+}
+.clear-btn:hover{ background:var(--gold-pale); }
+.clear-btn[hidden]{ display:none; }
+.search-meta{
+  text-align:center; font-size:.92rem; color:var(--ink-soft); margin:10px 0 0;
+  min-height:1.4em;
+}
+.search-meta b{ color:var(--maroon); }
+
+/* ---------- alphabet nav ---------- */
+.alpha-nav{
+  position:sticky; top:0; z-index:10;
+  background:rgba(246,239,220,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--border);
+  display:flex; flex-wrap:nowrap; overflow-x:auto;
+  gap:6px; padding:10px 14px;
+  margin-top:22px;
+  scrollbar-width:thin;
+}
+.alpha-nav::-webkit-scrollbar{ height:6px; }
+.alpha-nav::-webkit-scrollbar-thumb{ background:var(--border); border-radius:3px; }
+.alpha-btn{
+  flex:0 0 auto;
+  font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic', serif;
+  font-size:1.1rem;
+  border:1px solid var(--border);
+  background:var(--bg-card);
+  color:var(--ink);
+  width:38px; height:38px; border-radius:50%;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition: transform .12s, background .15s, color .15s, border-color .15s;
+}
+.alpha-btn:hover{ transform:translateY(-2px); border-color:var(--gold); }
+.alpha-btn.active{
+  background:var(--emerald); color:#fff; border-color:var(--emerald-dark);
+}
+.alpha-btn.disabled{ opacity:.32; cursor:default; }
+.alpha-btn.disabled:hover{ transform:none; border-color:var(--border); }
+
+/* ---------- main / sections ---------- */
+main{ max-width:880px; margin:0 auto; padding:18px 18px 60px; }
+
+.letter-divider{
+  display:flex; align-items:center; gap:14px;
+  margin:40px 0 18px;
+}
+.letter-divider:first-child{ margin-top:22px; }
+.letter-line{ flex:1; height:2px; background:linear-gradient(90deg, transparent, var(--gold), transparent); }
+.letter-medal{
+  flex:0 0 auto; width:54px; height:54px;
+  background:var(--emerald);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 0 0 3px var(--gold), 0 4px 10px rgba(0,0,0,.18);
+}
+.letter-medal span{
+  font-family:'Aref Ruqaa', serif; font-weight:700;
+  font-size:1.6rem; color:var(--gold-pale);
+}
+
+.topics-grid{ display:flex; flex-direction:column; gap:10px; }
+
+.topic-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  transition: border-color .15s, box-shadow .15s;
+}
+.topic-card.open{
+  background:var(--bg-card-open);
+  border-color:var(--gold);
+  box-shadow:var(--shadow);
+}
+.topic-head{
+  width:100%; border:none; background:transparent; cursor:pointer;
+  display:flex; align-items:center; gap:12px;
+  padding:13px 16px;
+  font-family:inherit; text-align:right; color:var(--ink);
+}
+.topic-num{
+  flex:0 0 auto;
+  font-family:'Aref Ruqaa', serif; font-weight:700;
+  color:var(--gold);
+  font-size:1.05rem;
+  min-width:2.2em; text-align:center;
+}
+.topic-title{ flex:1; font-size:1.12rem; }
+.topic-title mark{ background:var(--gold-pale); color:var(--maroon); border-radius:3px; padding:0 2px; }
+.topic-ref-mini{
+  flex:0 0 auto; font-size:.82rem; color:var(--ink-soft);
+  display:none;
+}
+@media (min-width:560px){ .topic-ref-mini{ display:block; } }
+.chevron{
+  flex:0 0 auto; color:var(--emerald); transition:transform .2s; font-size:.85rem;
+}
+.topic-card.open .chevron{ transform:rotate(180deg); }
+
+.topic-body{
+  max-height:0; overflow:hidden;
+  transition: max-height .28s ease;
+}
+.topic-card.open .topic-body{ max-height:900px; }
+
+.topic-body-inner{
+  padding:4px 20px 20px;
+  border-top:1px dashed var(--border);
+}
+.ayat-arabic{
+  font-family:'Amiri Quran', serif;
+  font-size:1.5rem;
+  line-height:2.4;
+  color:var(--emerald-dark);
+  text-align:center;
+  margin:16px 0 14px;
+  direction:rtl;
+}
+.ayat-urdu{
+  font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic', serif;
+  font-size:1.18rem;
+  line-height:2.3;
+  color:var(--ink);
+  margin:0 0 16px;
+  padding-inline-start: 14px;
+  border-inline-start: 3px solid var(--gold);
+}
+.ref-badges{ display:flex; flex-wrap:wrap; gap:8px; }
+.badge{
+  background:var(--emerald-pale);
+  color:var(--emerald-dark);
+  border:1px solid #c7dccd;
+  border-radius:999px;
+  padding:4px 13px;
+  font-size:.85rem;
+}
+.badge.translator{
+  background:#F4E6C8; color:var(--maroon); border-color:var(--gold-pale);
+}
+
+.empty-state{
+  text-align:center; color:var(--ink-soft); padding:50px 18px; font-size:1.1rem;
+}
+
+/* ---------- footer ---------- */
+.site-footer{
+  text-align:center; padding:30px 18px 40px;
+  color:var(--ink-soft); font-size:.92rem;
+  border-top:1px solid var(--border);
+}
+.site-footer p{ margin:4px 0; }
+.footer-note{ font-size:.85rem; opacity:.8; }
+.github-link{
+  display:inline-flex; align-items:center; gap:6px;
+  margin-top:10px; color:var(--emerald-dark); text-decoration:none;
+  border:1px solid var(--border); border-radius:999px; padding:6px 16px;
+  transition: background .15s;
+}
+.github-link:hover{ background:var(--emerald-pale); }
+
+/* ---------- focus states ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:3px solid var(--gold-bright);
+  outline-offset:2px;
+}
+
+@media (max-width:480px){
+  .ayat-arabic{ font-size:1.28rem; }
+  .ayat-urdu{ font-size:1.05rem; }
+  .site-title{ font-size:2.1rem; }
+}
+
+/* ---------- compiler name ---------- */
+.site-compiler{
+  margin: 2px 0 18px;
+  color: var(--gold-bright);
+  font-size: 1.08rem;
+  letter-spacing: .03em;
+}
+.footer-compiler{
+  font-size: 1.08rem;
+  color: var(--emerald);
+  font-weight: 700;
+  margin: 0 0 4px;
+}
