@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مضامین قرآنِ حکیم — موضوعاتی فہرست</title>
-<meta name="description" content="قرآنِ حکیم کے ۴۲۳ موضوعات، حروفِ تہجی کی ترتیب میں، آیات، حوالہ جات اور اردو ترجمہ کے ساتھ۔">
+<title>مضامین قرآنِ حکیم</title>
+<meta name="description" content="قرآنِ کریم کے موضوعات کو حروفِ تہجی کی ترتیب میں تلاش کریں — عربی آیات، اردو ترجمہ اور مکمل حوالہ جات کے ساتھ۔ مرتب: حفیظ الرحمٰن">
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0E5C45">
@@ -20,16 +20,13 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <p class="kicker">قرآنِ حکیم کے موضوعاتی مضامین</p>
+      <p class="bismillah">بِسۡمِ اللّٰهِ الرَّحۡمٰنِ الرَّحِيۡمِ</p>
       <h1 class="site-title">مضامین قرآنِ حکیم</h1>
-      <p class="site-sub">حروفِ تہجی کی ترتیب — الف سے یے تک</p>
+      <p class="site-sub">قرآنِ کریم کے موضوعات — الف سے یے تک</p>
       <p class="site-compiler">مرتب: حفیظ الرحمٰن</p>
-      <div class="stats-row">
-        <div class="stat"><span class="stat-num" id="statTotal">۴۲۳</span><span class="stat-label">مضامین</span></div>
-        <div class="stat-divider">۞</div>
-        <div class="stat"><span class="stat-num">۱۱۴</span><span class="stat-label">سورتیں</span></div>
-        <div class="stat-divider">۞</div>
-        <div class="stat"><span class="stat-num">۳۰</span><span class="stat-label">پارے</span></div>
+      <div class="header-intro">
+        <p>یہاں قرآنِ کریم کے <strong>۴۲۳ موضوعات</strong> حروفِ تہجی کی ترتیب میں جمع کیے گئے ہیں۔
+        ہر موضوع کے ساتھ متعلقہ آیت، اردو ترجمہ اور مکمل حوالہ درج ہے۔</p>
       </div>
     </div>
   </header>
@@ -38,26 +35,37 @@
 
   <div class="search-bar-wrap">
     <div class="search-bar">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
-      <input id="searchInput" type="text" placeholder="مضمون، سورت یا ترجمہ تلاش کریں…" autocomplete="off">
+      <input id="searchInput" type="search" placeholder="کوئی بھی موضوع یا سورت لکھیں…" autocomplete="off" aria-label="مضامین میں تلاش">
       <button id="clearSearch" class="clear-btn" type="button" aria-label="تلاش صاف کریں" hidden>✕</button>
     </div>
-    <p class="search-meta" id="searchMeta"></p>
+    <p class="search-meta" id="searchMeta" aria-live="polite"></p>
   </div>
 
-  <nav class="alpha-nav" id="alphaNav" aria-label="فہرستِ حروف"></nav>
+  <nav class="alpha-nav" id="alphaNav" aria-label="حروفِ تہجی سے براہِ راست جائیں"></nav>
 
   <main id="topicsContainer" aria-live="polite"></main>
 
-  <p class="empty-state" id="emptyState" hidden>کوئی مضمون نہیں ملا۔ دوسرے الفاظ سے تلاش کریں۔</p>
+  <div class="empty-state" id="emptyState" hidden>
+    <p class="empty-icon">🔍</p>
+    <p class="empty-title">کوئی نتیجہ نہیں ملا</p>
+    <p class="empty-hint">دوسرے الفاظ میں لکھ کر دیکھیں، یا اوپر حروف سے براہِ راست جائیں۔</p>
+  </div>
 
   <footer class="site-footer">
-    <p class="footer-compiler">مرتب: حفیظ الرحمٰن</p>
-    <p>ترجمہ: شیخ الہند مولانا محمود الحسنؒ</p>
-    <p class="footer-note">یہ ایک آزاد و اصل (Original) مرتب کردہ موضوعاتی فہرست ہے۔</p>
+    <div class="footer-inner">
+      <p class="footer-title">مضامین قرآنِ حکیم</p>
+      <div class="footer-meta">
+        <span>مرتب: <strong>حفیظ الرحمٰن</strong></span>
+        <span class="footer-dot">·</span>
+        <span>ترجمہ: شیخ الہند مولانا محمود الحسنؒ</span>
+      </div>
+      <p class="footer-note">یہ فہرست قرآنِ کریم سے براہِ راست مرتب کی گئی ہے۔</p>
+      <p class="footer-dua">اللہ تعالیٰ اسے قبول فرمائے اور نفع بخشے۔ آمین</p>
+    </div>
   </footer>
 
   <script src="data.js"></script>
@@ -66,7 +74,6 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('/mazameen-quran/service-worker.js')
-          .then(function(reg){ console.log('SW registered'); })
           .catch(function(err){ console.log('SW error:', err); });
       });
     }
