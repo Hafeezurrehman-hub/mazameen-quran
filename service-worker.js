@@ -1,10 +1,14 @@
-const CACHE_NAME = 'mazameen-quran-v1';
+const CACHE_NAME = 'mazameen-quran-v2';
 const FILES_TO_CACHE = [
   '/mazameen-quran/',
   '/mazameen-quran/index.html',
   '/mazameen-quran/style.css',
   '/mazameen-quran/script.js',
   '/mazameen-quran/data.js',
+  '/mazameen-quran/fonts/aref-ruqaa-700.woff2',
+  '/mazameen-quran/fonts/amiri-400.woff2',
+  '/mazameen-quran/fonts/noto-nastaliq-400.woff2',
+  '/mazameen-quran/fonts/noto-nastaliq-700.woff2',
   '/mazameen-quran/icon-192.png',
   '/mazameen-quran/icon-512.png'
 ];
